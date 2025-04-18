@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML Tutorial Playlist</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  
+  <!-- Internal Styles -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header styles */
+    header {
+      background-color:blue;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+
+    header nav ul li {
+      margin: 0 15px;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Tutorial Section */
+    #tutorials {
+      padding: 30px;
+      text-align: center;
+      background-color: white;
+      margin: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #tutorials h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    #tutorials p {
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      color: #666;
+    }
+
+    /* Video List */
+    .video-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .video-box {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 10px;
+    }
+
+    .video-box iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .video-box h3 {
+      font-size: 1.2rem;
+      color: #333;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .video-box:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Footer styles */
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#tutorials">HTML Tutorial</a></li>
+        <li><a href="#features">Features</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Tutorial Playlist Section -->
+  <section id="tutorials">
+    <h1>Complete JSON Tutorial Playlist</h1>
+    <p>Watch these videos to master JSON and become an expert!</p>
+    <div class="video-list">
+      <!-- Video 1 -->
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/yy-RPsffuKk?list=PLUDwpEzHYYLs6I6jA_USsP3UWfS7EKCf2" allowfullscreen></iframe>
+        <h3>JSON Introduction</h3>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/us9MQNnAF1s" allowfullscreen></iframe>
+        <h3>JSON vs XML</h3>
+      </div>
+
+      <!-- Video 3 -->
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/ZB-lGyNBXHI" allowfullscreen></iframe>
+        <h3>Representation of Data in JSON</h3>
+      </div>
+
+      <!-- Video 4 -->
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/kP73mR9PX6w" allowfullscreen></iframe>
+        <h3>Retrieve Data from JSON</h3>
+      </div>
+
+      <!-- Video 5 -->
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/U-5VHRvOFpA" allowfullscreen></iframe>
+        <h3>Read Data from JSON File Using Java</h3>
+      </div>
+
+      <!-- Video 6 -->
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/tVNcIMsExDg" allowfullscreen></iframe>
+        <h3>Data Driven Testing</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Learning | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

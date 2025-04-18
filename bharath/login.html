@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center; /* Horizontally center the content */
+            align-items: center;     /* Vertically center the content */
+            height: 100vh;           /* Full height of the viewport */
+            margin: 0;               /* Remove any default margin */
+        }
+
+        /* Form Container (Signup & Login Forms) */
+        .form-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;  /* Limit the width of the form */
+            text-align: center;  /* Center text inside the form */
+        }
+
+        /* Input Fields */
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Submit Button */
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Error Message */
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
+        /* Links */
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Login to Your Account</h2>
+        <form id="loginForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <span id="emailError" class="error"></span>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <span id="passwordError" class="error"></span>
+
+            <button type="submit">Log In</button>
+        </form>
+
+        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let valid = true;
+
+            // Clear previous error messages
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+
+            // Get the user data from localStorage
+            const storedUser = JSON.parse(localStorage.getItem('user'));
+
+            // Validate Email and Password
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (!storedUser) {
+                alert('No account found! Please sign up first.');
+                valid = false;
+            } else {
+                if (email !== storedUser.email) {
+                    document.getElementById('emailError').textContent = 'Email does not match!';
+                    valid = false;
+                }
+
+                if (password !== storedUser.password) {
+                    document.getElementById('passwordError').textContent = 'Password does not match!';
+                    valid = false;
+                }
+            }
+
+            // If valid, login successful
+            if (valid && storedUser && email === storedUser.email && password === storedUser.password) {
+                alert('Login successful!');
+                window.location.href = 'index.html';  // Redirect to the profile page (or another page)
+            }
+        });
+    </script>
+
+</body>
+</html>
